@@ -1,0 +1,144 @@
+#navbar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+    
+  }
+  
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    
+    
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #navbar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .content{
+    display: flex;
+    height: 500px;
+    width: 100%;
+    background-color: #7a6060;
+    
+  }
+  .content img{
+    padding-left: 100px;
+  }
+
+ .content h4{
+  color:antiquewhite;
+  padding-left: 100px;
+ }
+
+  .content h2{
+    font-size: 50px;
+    padding-left: 100px;
+    
+  }
+
+  .content p{
+    font-size: 20px;
+    padding-left: 100px;
+    padding-right: 80px;
+    text-align: justify;
+  }
+
+  .content ul{
+    padding-left: 100px;
+    line-height: 1.5;
+  }
+
+  .bgimage{
+    background-image: url("man.png");
+    min-height: 700px;
+    
+  }
+
+  .project{
+    width: 100%;
+    height: 150px;
+    background-color: #f7e2e2;
+  }
+
+
+  #skills{
+    padding-left:250px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .box{
+    height: 400px;
+    width: 800px;
+    padding-top: 20px;
+    
+  }
+
+  .container{
+    width: 100%;
+    border-radius: 25px;
+    background-color: #7a6060;
+  }
+
+  .skill{
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    border-radius: 25px;
+    
+  }
+
+  .html{width: 75%;background-color: #333;}
+  .css{width: 65%;background-color: #333;}
+  .js{width: 50%;background-color: #333;}
+  
+
+.myskills{
+  text-align: center;
+  
+}
+.box_content p{
+  font-size: 24px;
+  
+}
+
+.services{
+  width: 100%;
+  height: 100px;
+  background-color: #7a6060;
+
+}
+
+
+.services h2{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 15px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+} 

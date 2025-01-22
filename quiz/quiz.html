@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .quiz-container {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .quiz-question {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .quiz-options {
+      list-style: none;
+      padding: 0;
+    }
+
+    .quiz-options li {
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .quiz-options li:hover {
+      background-color: #eef;
+    }
+
+    .quiz-options li.checked {
+      background-color: #4caf50;
+      color: white;
+      border-color: #4caf50;
+    }
+
+    .quiz-footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .quiz-results {
+      margin-top: 20px;
+      overflow-y: auto;
+      max-height: 300px;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .result-item {
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+
+    .correct {
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+    }
+
+    .wrong {
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+    }
+
+    .retake-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .retake-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>JavaScript Quiz</h1>
+      <p>Test your JavaScript knowledge!</p>
+    </div>
+    <div id="quiz-content">
+      <!-- Quiz questions will load here -->
+    </div>
+    <div id="quiz-footer" class="quiz-footer">
+      <button class="retake-btn" id="retake-quiz" onclick="retakeQuiz()" style="display:none;">Retake Quiz</button>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What does 'NaN' stand for in JavaScript?",
+        options: ["Not a Number", "No a Number", "Not an Object", "None of the above"],
+        answer: 0
+      },
+      {
+        question: "Which of the following is a correct way to declare a variable in JavaScript?",
+        options: ["var x;", "int x;", "declare x;", "variable x;"],
+        answer: 0
+      },
+      {
+        question: "How do you write a comment in JavaScript?",
+        options: ["// This is a comment", "/* This is a comment */", "# This is a comment", "Both A and B"],
+        answer: 3
+      },
+      {
+        question: "Which of the following methods is used to convert a string into an integer in JavaScript?",
+        options: ["parseInt()", "parseFloat()", "toInteger()", "Number()"],
+        answer: 0
+      },
+      {
+        question: "What is the default value of a Boolean variable in JavaScript?",
+        options: ["true", "false", "undefined", "null"],
+        answer: 2
+      },
+      {
+        question: "Which of the following is a valid JavaScript operator?",
+        options: ["&&", "||", "!", "All of the above"],
+        answer: 3
+      },
+      {
+        question: "Which method is used to add an element to the end of an array in JavaScript?",
+        options: ["push()", "pop()", "shift()", "unshift()"],
+        answer: 0
+      },
+      {
+        question: "Which of the following is a JavaScript data type?",
+        options: ["Boolean", "Integer", "Double", "None of the above"],
+        answer: 0
+      },
+      {
+        question: "How do you create a function in JavaScript?",
+        options: ["function myFunction()", "create function myFunction()", "def myFunction()", "None of the above"],
+        answer: 0
+      },
+      {
+        question: "Which keyword is used to define a constant variable in JavaScript?",
+        options: ["const", "let", "var", "final"],
+        answer: 0
+      }
+    ];
+
+    let currentIndex = 0;
+    let userAnswers = [];
+    let score = 0;
+
+    function loadQuiz() {
+      const quizContent = document.getElementById("quiz-content");
+      if (currentIndex < quizData.length) {
+        const currentQuestion = quizData[currentIndex];
+        quizContent.innerHTML = `
+          <div class="quiz-question">${currentQuestion.question}</div>
+          <ul class="quiz-options">
+            ${currentQuestion.options
+              .map(
+                (option, index) =>
+                  `<li onclick="selectOption(${index})">${option}</li>`
+              )
+              .join("")}
+          </ul>
+          <div class="quiz-footer">
+            <button class="retake-btn" onclick="nextQuestion()">Next</button>
+          </div>
+        `;
+      } else {
+        showResults();
+      }
+    }
+
+    function selectOption(index) {
+      userAnswers[currentIndex] = index;
+      const options = document.querySelectorAll(".quiz-options li");
+      options.forEach((option, i) => {
+        option.classList.remove("checked");
+        if (i === index) {
+          option.classList.add("checked");
+        }
+      });
+    }
+
+    function nextQuestion() {
+      if (userAnswers[currentIndex] !== undefined) {
+        if (userAnswers[currentIndex] === quizData[currentIndex].answer) {
+          score++;
+        }
+        currentIndex++;
+        loadQuiz();
+      } else {
+        alert("Please select an option before proceeding!");
+      }
+    }
+
+    function showResults() {
+      const quizContent = document.getElementById("quiz-content");
+      quizContent.innerHTML = `
+        <div class="quiz-results">
+          ${quizData
+            .map((q, i) => {
+              const isCorrect = userAnswers[i] === q.answer;
+              return `
+                <div class="result-item ${isCorrect ? "correct" : "wrong"}">
+                  <p><b>Question:</b> ${q.question}</p>
+                  <p><b>Your Answer:</b> ${
+                    q.options[userAnswers[i]] || "No Answer"
+                  }</p>
+                  <p><b>Correct Answer:</b> ${q.options[q.answer]}</p>
+                </div>
+              `;
+            })
+            .join("")}
+        </div>
+        <p><b>Score:</b> ${score} / ${quizData.length}</p>
+      `;
+      document.getElementById("retake-quiz").style.display = "inline-block";
+    }
+
+    function retakeQuiz() {
+      currentIndex = 0;
+      userAnswers = [];
+      score = 0;
+      document.getElementById("retake-quiz").style.display = "none";
+      loadQuiz();
+    }
+
+    loadQuiz();
+  </script>
+</body>
+</html>

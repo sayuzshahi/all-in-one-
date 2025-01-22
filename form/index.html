@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-form">
+        <Form id="mainform" onsubmit="return formValidate ()">
+            <br>
+            <br>
+            <div id="content">
+                <input type="text" id="name" placeholder="Full Name" style="text-align: center;" required>
+                <Br>
+                <Br>
+                <input type="email" id="email" placeholder="Enter Email" style="text-align: center;" required>
+                <br>
+                <br>
+                <input type="password" id="pass1" placeholder="Enter Password" style="text-align: center;">
+                <br>
+                <br>
+                <input type="password" id="pass2" placeholder="Conform Password" style="text-align: center;">
+            </div>
+            <br>
+            <div id="checkbox">
+                <input type="checkbox" required>I agree all statements
+            </div>
+
+            <br>
+            <div id="but">
+                <button type="submit" id="but1" value="submit">Sign Up</button>
+            </div>
+            <br>
+            <!--<div class="text">Already hava a account? <button id="but2">Show QR generator</button></div>-->  
+        </Form>
+
+    </div>
+    <br>
+
+    <div id="popup">
+        <div id="pop-up-box">
+            <div id="close"><button>X</button></div>
+            <br>
+            <div id="content">
+                <input type="text" id="text">
+                <br>
+                <br>
+                <div id="display">
+                    <img src="" id="qr">
+
+                </div>
+                <button onclick="generate()" id="but3">Generate</button>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

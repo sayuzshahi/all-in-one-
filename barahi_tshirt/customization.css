@@ -1,0 +1,53 @@
+#home {
+    display: content;
+}
+
+nav {
+    padding: 20px;
+    background-color: rgb(36, 36, 119);
+}
+
+a:link {
+    color: black;
+}
+
+a:hover {
+    color: rgb(36, 36, 119);
+}
+
+a:visited {
+    color: black;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+nav {
+    text-align: center;
+    background-color: rgb(0, 0, 108);
+}
+
+
+#contact {
+    
+    left: 10px;
+    bottom: 0;
+    padding: 10px;
+    
+    background-color: rgb(0, 0, 108);
+    color: white;
+    border: none;
+
+}
+
+
+
+
+
+nav img {
+    position: relative;
+    left: -500px;
+}
+
+

@@ -1,0 +1,87 @@
+#sidenav a {
+    position: absolute; 
+    left: -200px;
+    transition: 0.5s; 
+    padding: 5px;
+    width: 220px; 
+    text-decoration: none; 
+    font-size: 35px; 
+    color: white;
+    border-radius: 0 5px 5px 0;
+    
+}
+
+#sidenav a:hover {
+    left: 0;
+}
+
+#barahi {
+    top: 20px;
+    background-color: rgb(61, 63, 63);
+    margin-bottom: 5px;
+}
+
+#clock {
+    top: 80px;
+    background-color: rgb(61, 63, 63);
+}
+
+#expense {
+    top: 140px;
+    background-color: rgb(61, 63, 63);
+}
+
+#form {
+    top: 200px;
+    background-color: rgb(61, 63, 63);
+}
+
+#guessing {
+    top: 260px;
+    background-color: rgb(61, 63, 63);
+}
+
+#handicraft {
+    top: 320px;
+    background-color: rgb(61, 63, 63);
+}
+
+#inv {
+    top: 380px;
+    background-color: rgb(61, 63, 63);
+}
+
+#mul {
+    top: 440px;
+    background-color: rgb(61, 63, 63);
+}
+
+#photo {
+    top: 500px;
+    background-color: rgb(61, 63, 63);
+}
+
+#portfolio {
+    top: 560px;
+    background-color: rgb(61, 63, 63);
+}
+
+#quiz{
+    top: 620px;
+    background-color: rgb(61, 63, 63);
+}
+
+#todo {
+    top: 680px;
+    background-color: rgb(61, 63, 63);
+}
+
+#quote {
+    top: 740px;
+    background-color: rgb(61, 63, 63);
+}
+
+ /* {
+    top: 800px;
+    background-color: rgb(61, 63, 63);
+} */

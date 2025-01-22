@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock App</title>
+    <link rel="stylesheet" href="clockapp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tourney&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="clock-app">
+        <!-- Vertical Icons -->
+        <div class="icon-container">
+            <div class="icon" onclick="switchView('clock')">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="icon" onclick="switchView('stopwatch')">
+                <i class="fa-solid fa-stopwatch"></i>
+            </div>
+            <div class="icon" onclick="switchView('timer')">
+                <i class="fa-solid fa-hourglass"></i>
+            </div>
+        </div>
+
+        <!-- Main Display -->
+        <div class="time-display">
+            <!-- Horizontal Days -->
+            <div class="days-row" id="days-row"></div>
+
+            <!-- Views -->
+            <div id="clock-view" class="view active">
+                <h1 id="current-time"></h1>
+                <button onclick="toggleTimeFormat()">12/24 Hour</button>
+            </div>
+
+            <div id="stopwatch-view" class="view">
+                <h2><span id="stopwatch-display">00:00:00</span></h2>
+                <button id="stopwatch-start" onclick="toggleStopwatch()">Start</button>
+                <button onclick="resetStopwatch()">Reset</button>
+            </div>
+
+            <div id="timer-view" class="view">
+                <h2><span id="timer-display">00:00:00</span></h2>
+                <input type="number" id="timer-input" placeholder="Enter seconds (max: 100000)">
+                <button id="timer-start" onclick="toggleTimer()">Start</button>
+                <button onclick="resetTimer()">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="clockapp.js"></script>
+    </body>
+</html>

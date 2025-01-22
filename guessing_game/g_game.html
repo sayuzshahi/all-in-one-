@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Number Guessing Game</title>
+    <link rel="stylesheet" href="g_game.css">
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <div id="game-container">
+        <p>You have 10 chances to guess the number between 0 and 50.</p>
+        <input type="number" id="user-guess" placeholder="Enter your guess" min="0" max="50">
+        <button id="submit-btn">Submit</button>
+        <button id="retry-btn" class="hidden">Play Again</button>
+        <p class="message" id="feedback"></p>
+    </div>
+
+    <script src="g_game.js"></script>
+</body>
+</html>

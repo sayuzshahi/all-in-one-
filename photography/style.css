@@ -1,0 +1,138 @@
+* {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #000000;
+  text-align: center;
+  padding: 25px;
+  
+}
+
+.topnav a {
+  color: #271818;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #000000;
+  color: red;
+}
+
+.topnav a.active {
+  background-color: #000000;
+  color: rgb(38, 36, 36);
+}
+
+.content {
+  width: 100%;
+  height: 70px;
+  background-color: whitesmoke;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 35px;
+
+}
+
+.content a:hover {
+  background-color: #000000;
+  color: red;
+  text-decoration: none;
+}
+
+.contenpart {
+  display: grid;
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  max-height: 800px;
+
+}
+
+.row {
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap;
+  /* IE 10 */
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+.column {
+  -ms-flex: 50%;
+  /* IE 10 */
+  flex: 50%;
+  padding: 20px 10px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+#more,
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
+.follow {
+  text-align: center;
+}
+
+.lowimage {
+  display: flex;
+  height: 240px;
+  width: 240px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.photo-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: #f4f4f4;
+  /* Optional background color */
+  padding: 10px;
+
+  bottom: 0;
+  width: 100%;
+
+}
+
+.photo-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  /* Optional for rounded corners */
+}
+
+.text{
+  position: absolute;
+  top: 35%;
+  left: 70%;
+  background: none;
+  margin: 25px;
+  font-size: 40px;
+  
+  
+}
+.text p{
+  font-size: 18px;
+}
+
+

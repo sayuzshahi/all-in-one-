@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No. guessing game</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    /* No. guessing game where user guess no. betweeen 0-50, additional user can get upto 10 chances*/
+
+let userConsent = confirm("Hello There!!! You've 10 chances to guess the Number. Good Luck")
+
+if (userConsent) {
+//game logic
+let computerNo = Math.ceil(Math.random()*50) //random number 0-50
+let counter = 0
+
+while (counter < 10){
+let guessed = prompt('What number?')
+if (guessed == computerNo){
+    alert('wow successful people congratulation')
+    break //breaks the loop
+}
+
+else{
+    alert('HAHA thats not the Number')
+}
+counter += 1
+
+
+}
+
+if (counter == 10){
+alert ("Better Luck Next Time. 0 chance left")
+}
+
+//retry
+let retry = confirm("Why not give another try???")
+if (retry) {
+location.reload();
+
+}
+
+else {
+alert("It's Never too late to try.")
+}
+
+}
+else {
+alert("It's Never too late to try.")
+}
+</script>
+</html>

@@ -1,0 +1,79 @@
+#mainform{
+    height: 350px;
+    width: 300px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 20px;
+    
+}
+
+#content{
+    text-align: center;
+}
+
+#but{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.main-form{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+#but1{
+    border-radius: 5px;
+    
+}
+
+#checkbox{
+    text-align: center;
+}
+
+.text{
+    text-align: center;
+}
+
+
+#pop-up-box{
+    height: auto;
+    width: 300px;
+    background-color: aquamarine;
+    border: 1px solid;
+    border-radius: 20px;
+    display: none;
+
+}
+
+#close{
+    margin-left: 260px;
+    margin-top: 20px;
+}
+
+#popup{
+    display: flex;
+    justify-content: center;
+}
+
+#but3{
+    width: 170px;
+    margin-bottom: 50px;
+}
+
+
+#display{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 5s;
+}
+
+#display.show-img{
+    max-height: 300px;
+    margin: 10px, auto;
+    margin-bottom: 10px;
+}

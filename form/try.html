@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Form</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    #qrcode {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>QR Code Generator</h1>
+  <form id="qrForm">
+    <label for="email">Email:</label>
+    <br>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+    <label for="password">Password:</label>
+    <br>
+    <input type="password" id="password" name="password" required>
+    <br><br>
+    <button type="button" onclick="generateQRCode()">Submit</button>
+  </form>
+  <div id="qrcode"></div>
+
+  <script>
+    function generateQRCode() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const qrCodeDiv = document.getElementById('qrcode');
+      
+      // Clear any existing QR code
+      qrCodeDiv.innerHTML = "";
+
+      if (!email || !password) {
+        alert("Please fill out all fields before submitting!");
+        return;
+      }
+
+      // Generate QR code with the form data
+      const qrData = `Email: ${email}, Password: ${password}`;
+      new QRCode(qrCodeDiv, qrData);
+    }
+  </script>
+</body>
+</html>
