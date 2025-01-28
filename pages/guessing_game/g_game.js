@@ -42,7 +42,7 @@ const submitBtn = document.getElementById('submit-btn');
                 feedback.textContent = `Too low! Attempts left: ${attemptsLeft}`;
                 feedback.style.color = "orange";
             } else {
-                feedback.textContent = `Too high! Attempts left: ${attemptsLeft}`;
+                feedback.textContent = `Nearly There! Attempts left: ${attemptsLeft}`;
                 feedback.style.color = "orange";
             }
 

@@ -85,3 +85,9 @@
     top: 800px;
     background-color: rgb(61, 63, 63);
 } */
+
+
+img {
+    width: 100%;
+    height:fit-content;
+}

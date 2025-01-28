@@ -6,16 +6,16 @@
 
 body {
     font-family: sans-serif;
-    background-color: #00aeff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #00aeff;   
     height: 100vh;
 }
 
 .board {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+    margin-top: 150px;
 }
 
 .column {
@@ -38,6 +38,8 @@ body {
 }
 
 .card {
+    margin-top: 10px;
+    width: 91%;
     padding: 15px;
     background-color: #f0f0f0;
     margin-bottom: 10px;
@@ -144,7 +146,3 @@ nav button:hover {
 }
 
 
-
-.top{
-    margin-bottom: 50px;
-}

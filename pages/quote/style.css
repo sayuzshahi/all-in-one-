@@ -8,7 +8,7 @@ body {
 
 .box {
     background: whitesmoke;
-    width: 800px;
+    width: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,12 +18,15 @@ body {
     text-align: center;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
     font-family: 'Satisfy', cursive; 
+    font-size: 20px;
+    
 }
 
 .box h2 {
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 40px;
     position: relative;
+    color: crimson;
 }
 
 .box h2 ::after {
@@ -73,4 +76,8 @@ body {
     justify-content: center;
     margin: 5px;
     cursor: pointer;
+}
+
+#quote {
+    font-size: 30px;
 }
